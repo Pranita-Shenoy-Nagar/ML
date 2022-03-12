@@ -1,0 +1,17 @@
+#k nearest neighbors
+
+import numpy as np
+x=np.array([1,2,1,2,1])
+y=np.array([5,19,5,19,5])
+x=x.reshape(-1,1)
+y=y.reshape(-1,1)
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
+knn=KNeighborsClassifier(n_neighbors=3)
+knn.fit(x_train,y_train)
+y_pred=knn.predict(x_test)
+
+print(x_test)
+print(y_test)
+print(y_pred)
